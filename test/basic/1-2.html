@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>삼각형 판별하기</title>
+    </head>
+    <body>
+        <script>
+            function solution(a, b, c){
+                let array = [a,b,c];
+                array.sort((x,y) => x-y);
+                let answer = (array[0] + array[1] > array[2]) ? "YES" : "NO";
+                return answer;
+            }
+
+            console.log(solution(6,7,11));
+        </script>
+    </body>
+</html>

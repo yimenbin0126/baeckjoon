@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>중복 문자 제거</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let result = [];
+                for (str of s) {
+                    if (!result.includes(str)) {
+                        result.push(str);
+                    }
+                }
+                return result.join('');
+            }
+            console.log(solution("ksekkset"));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>대문자 찾기</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){      
+                let arr = s.split('').filter(item => item.toUpperCase() === item);
+                return arr.length;
+            }
+
+            let str="KoreaTimeGood";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

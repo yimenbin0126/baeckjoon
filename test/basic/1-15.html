@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>가운데 문자 출력</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let str = (s.length % 2 === 0) ? 
+                s[(s.length / 2) - 1] + s[s.length / 2] : s[parseInt(s.length / 2)];
+                return str;   
+            }
+            console.log(solution("good"));
+        </script>
+    </body>
+</html>

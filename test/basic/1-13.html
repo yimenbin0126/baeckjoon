@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>대소문자 변환</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){         
+                let result = "";    
+                for (str of s) {
+                    result += (str.toUpperCase() !== str) ? 
+                    str.toUpperCase() : str.toLowerCase();
+                } 
+                return result;
+            }
+
+            let str="StuDY";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
