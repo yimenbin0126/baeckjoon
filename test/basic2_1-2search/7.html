@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>봉우리</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){  
+                let num = 0;
+                let count = 0;
+                let length = arr.length;
+                for (let x = 0; x < length; x++) {
+                    for (let y = 0; y < length; y++) {
+                        num = arr[x][y];
+                        if (
+                            ((x-1 < 0) || (num > arr[x-1][y]))
+                            && ((x+1 >= length) || (num > arr[x+1][y]))
+                            && ((y-1 < 0) || (num > arr[y-1][y]))
+                            && ((y+1 >= length) || (num > arr[y+1][y]))
+                        ) {
+                            count++;
+                        }
+                    }
+                }
+                return count;
+            }  
+
+            let arr=[[5, 3, 7, 2, 3], 
+                     [3, 7, 1, 6, 1],
+                     [7, 2, 5, 3, 4],
+                     [4, 3, 6, 4, 1],
+                     [8, 7, 3, 5, 2]];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>

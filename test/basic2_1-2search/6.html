@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>격자판 최대합
+        </title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+                let len = 5;  
+                let sumMax = 0;
+                let sum = 0;
+                // 1. x 고정, y 증가
+                for(let i = 0; i < len; i++){
+                    sum = arr[i].reduce((a, b) => a + b);
+                    sumMax = (sum > sumMax) ? sum : sumMax;
+                }
+                // 2. y 고정, x 증가
+                for(let j = 0; j < len; j++){
+                    sum = 0;
+                    for(let k = 0; k < len; k++){
+                        sum += arr[k][j];
+                    }
+                    sumMax = (sum > sumMax) ? sum : sumMax;
+                }
+                // 3. x, y 둘다 증가
+                sum = 0;
+                for (let x = 0; x < len; x++) {
+                    sum += arr[x][x];
+                }
+                sumMax = (sum > sumMax) ? sum : sumMax;
+                // 4. x 5->1 , y 1->5
+                sum = 0;
+                for (let y = 0; y < len; y++) {
+                    sum += arr[--len][y];
+                }
+                sumMax = (sum > sumMax) ? sum : sumMax;
+
+                return sumMax;
+            }
+
+            let arr=[[10, 13, 10, 12, 15], 
+                     [12, 39, 30, 23, 11],
+                     [11, 25, 50, 53, 15],
+                     [19, 27, 29, 37, 27],
+                     [19, 13, 30, 13, 19]];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
